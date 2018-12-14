@@ -16,16 +16,19 @@
 
 <script>
     export default {
-        data: function() {
+        data: function () {
             return {
-            // ToDo: Create a data object called quote that is 
-            // initialized as an empty string
+                quote: ''
             };
         },
         methods: {
             // ToDo: Create a method createNew that emits an event 
-    // listener named quoteAdded that passes the quote data object
-                // Re-initialize quote to an empty string
+            // listener named quoteAdded that passes the quote data 
+            // object Re-initialize quote to an empty string
+            createNew: function ('quoteAdded', emit){
+                this.quote
+            },
+            quote: ''
         }
     }
 </script>
