@@ -3,12 +3,13 @@
         <form>
             <div class="col-sm-8 col-sm-offset-2 col-xs-12 col-md-6 col-md-offset-3 form-group">
                 <label>Quote</label>
-                <!--ToDo: Within the textarea use v-model that is set to quote-->
-                <textarea class="form-control" rows="3" v-model="quote"></textarea>
+                <textarea class="form-control" 
+                          rows="3" 
+                          v-model="quote"></textarea>
             </div>
             <div class="col-sm-8 col-sm-offset-2 col-xs-12 col-md-6 col-md-offset-3 form-group">
-                <!--ToDo: Add a click event with .prevent and set it equal to the createNew method created below-->
-                <button class="btn btn-primary" @click.prevent="createNew">Add Quote</button>
+                <button class="btn btn-primary" 
+                        @click.prevent="createNew">Add Your Quote</button>
             </div>
         </form>
     </div>
@@ -22,13 +23,10 @@
             };
         },
         methods: {
-            // ToDo: Create a method createNew that emits an event 
-            // listener named quoteAdded that passes the quote data 
-            // object Re-initialize quote to an empty string
-            createNew: function ('quoteAdded', emit){
-                this.quote
+            createNew: function () {
+                this.$emit('quoteAdded', this.quote)
             },
-            quote: ''
+            this.quote = ''
         }
     }
 </script>
